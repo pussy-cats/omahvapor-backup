@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Bengkel')
+@section('title', 'OmahVapor')
 
 @section('content_header')
 <h1 class="m-0 text-dark">Edit Jadwal</h1>

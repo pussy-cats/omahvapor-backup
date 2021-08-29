@@ -5,7 +5,7 @@
 @section('content')
 @include('layouts.flash')
 <div class="jumbotron jumbotron-fluid"
-    style="background-image: url('{{ asset('images/jumbotron.jpeg') }}'); background-size: cover; height: 600px; background-position: center">
+    style="background-image: url('{{ asset('images/jumbotron.jpg') }}'); background-size: cover; height: 600px; background-position: center">
 </div>
 
 <h4 class="display-4 text-center text-bold">Produk Kami</h4>

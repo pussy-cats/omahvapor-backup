@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Bengkel')
+@section('title', 'OmahVapor')
 
 @section('content_header')
-<h1 class="m-0 text-dark">Data Jadwal Bengkel (Tabel)</h1>
+<h1 class="m-0 text-dark">Data Jadwal OmahVapor (Tabel)</h1>
 @stop
 
 @section('content')

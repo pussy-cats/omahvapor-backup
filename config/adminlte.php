@@ -16,7 +16,7 @@ return [
 
     'title' => '',
     'title_prefix' => '',
-    'title_postfix' => ' - Bengkel AJS',
+    'title_postfix' => ' - OmahVapor',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Bengkel AJS</b>',
+    'logo' => '<b>OmahVapor</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Bengkel',
+    'logo_img_alt' => 'OmahVapor',
 
     /*
     |--------------------------------------------------------------------------
@@ -261,22 +261,6 @@ return [
           'text' => 'Lihat Pengguna (User)',
           'url'  => '/dashboard/user',
           'icon' => 'fas fa-fw fa-box',
-      ],
-      ['header' => 'MENU PENJADWALAN'],
-      [
-        'text' => 'Lihat Jadwal (Tabel)',
-        'url' => '/dashboard/schedule',
-        'icon' => 'fas fa-fw fa-calendar-day',
-      ],
-      [
-        'text' => 'Lihat Jadwal (Kalender)',
-        'url' => '/dashboard/schedule/calendar',
-        'icon' => 'fas fa-fw fa-calendar'
-      ],
-      [
-        'text' => 'Tambah Jadwal',
-        'url' => '/dashboard/schedule/add',
-        'icon' => 'fas fa-fw fa-calendar-plus',
       ],
       ['header' => 'MENU PENJUALAN'],
       [

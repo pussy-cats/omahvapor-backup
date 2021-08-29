@@ -24,7 +24,7 @@
                 <div class="row mb-4">
                     <div class="col-sm">
                         <p class="text-bold">Penjual</p>
-                        <p>Nama : Bengkel AJS</p>
+                        <p>Nama : OmahVapor</p>
                         <p>Alamat : Colomadu</p>
                         <p>Kode Pos : 57375</p>
                     </div>
