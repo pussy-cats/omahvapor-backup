@@ -94,7 +94,7 @@ class UserController extends Controller
  public function deleteUser($id)
  {
   $user = User::find($id);
-  if ($user->delete() && $user->profile->delete()) {
+  if ($user->delete()) {
    return redirect()->route('userIndex')->with('flash', [
     'card' => 'success',
     'message' => 'Hapus Data User berhasil',

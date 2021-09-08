@@ -16,7 +16,7 @@ return [
 
     'title' => '',
     'title_prefix' => '',
-    'title_postfix' => ' - OmahVapor',
+    'title_postfix' => ' - Insomnia Vapestore',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>OmahVapor</b>',
+    'logo' => '<b>Insomnia Vapestore</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'OmahVapor',
+    'logo_img_alt' => 'Insomnia Vapestore',
 
     /*
     |--------------------------------------------------------------------------

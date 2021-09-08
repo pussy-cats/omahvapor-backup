@@ -16,34 +16,34 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nama Pelanggan</th>
-                            <th scope="col">Tanggal Jadwal</th>
+                            <th scope="col">Tanggal Pembelian</th>
                             <th scope="col">Total Bayar</th>
-                            <th scope="col">Jumlah Bayar</th>
-                            <th scope="col">Jumlah Kembali</th>
-                            <th scope="col">Opsi</th>
+                            <th scope="col" colspan="2" class="text-center">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($allCheckouts as $checkout)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            @if($checkout->schedule)
-                            <td>{{ $checkout->schedule->user->name }}</td>
-                            <td>{{ \Carbon\Carbon::parse($checkout->schedule->start_time)->isoFormat('D MMMM YYYY') }}
-                            </td>
-                            @else
                             <td>{{ $checkout->user->name }}</td>
                             <td>{{ \Carbon\Carbon::parse($checkout->created_at)->isoFormat('D MMMM YYYY') }}
-                                @endif
                             <td>{{ "Rp. " . number_format($checkout->total) }}</td>
-                            <td>{{ "Rp. " . number_format($checkout->pay)}}</td>
-                            <td>{{ "Rp. " . number_format($checkout->change)}}</td>
+                            @if($checkout->payment)
+                            <td><a href="{{ route('checkoutDetail', ['id' => $checkout->id]) }}" class="btn btn-info">Lihat Bukti Pembayaran</a></td>
                             <td class="text-center"><a href="{{ route('checkoutInvoice', ['id' => $checkout->id]) }}"
-                                    class="btn btn-primary">Cetak Invoice</a></td>
+                                    class="btn btn-primary" target="_blank">Cetak Invoice</a></td>
+                            @else
+                            <td><a href="" class="btn btn-info disabled" disabled>Lihat Bukti Pembayaran</a></td>
+                            <td class="text-center"><a href="{{ route('checkoutInvoice', ['id' => $checkout->id]) }}"
+                                    class="btn btn-primary disabled" disabled>Cetak Invoice</a></td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+                <div class="float-right mt-3">
+                    {{ $allCheckouts->links() }}
+                </div>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $data = [
-            'allInvoices' => Checkout::with('carts')->withCount('carts')->where('user_id', '=', Auth::user()->id)->get()
+            'allInvoices' => Checkout::with('carts', 'payment')->withCount('carts')->where('user_id', '=', Auth::user()->id)->get()
         ];
         return view('invoice.userIndex', $data);
     }

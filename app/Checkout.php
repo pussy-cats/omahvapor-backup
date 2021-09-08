@@ -20,4 +20,9 @@ class Checkout extends Model
  {
    return $this->hasOne('App\User', 'id', 'user_id');
  }
+
+ public function payment()
+ {
+   return $this->hasOne('App\Payment', 'checkout_id', 'id');
+ }
 }

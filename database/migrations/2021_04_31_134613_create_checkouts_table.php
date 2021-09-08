@@ -21,8 +21,7 @@ class CreateCheckoutsTable extends Migration
             $table->string('courier')->nullable();
             $table->text('address')->nullable();
             $table->integer('deliveryfee')->nullable();
-            $table->foreignId('user_id')->nullable()->constrained();
-            $table->foreignId('schedule_id')->nullable()->constrained();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -16,11 +16,6 @@ class DashboardController extends Controller
    $data = [
      'userToday' => User::where('created_at', 'LIKE', '%' . $dateNow->format('Y-m-d') . '%')
                     ->count(),
-     'scheduleAfter' => Schedule::where('start_time', '>=', Carbon::now())
-                        ->count(),
-     'scheduleOfWeek' => Schedule::whereBetween('start_time', [$dateNow->copy()->startOfWeek(), $dateNow->copy()->endOfWeek()])
-                          ->get()
-                          ->sortBy('created_at')
    ];
 
   //  Generate Charts Data

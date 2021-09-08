@@ -16,7 +16,11 @@
                         Invoice Checkout
                     </div>
                     <div class="col-sm">
+                        @if($checkoutData->payment)
+                        <div class="float-right">Status : Selesai</div>
+                        @else
                         <div class="float-right">Status : Pending</div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -24,15 +28,15 @@
                 <div class="row mb-4">
                     <div class="col-sm">
                         <p class="text-bold">Penjual</p>
-                        <p>Nama : OmahVapor</p>
+                        <p>Nama : Insomnia Vapestore</p>
                         <p>Alamat : Colomadu</p>
                         <p>Kode Pos : 57375</p>
                     </div>
                     <div class="col-sm">
                         <p class="text-bold">Pembeli</p>
-                        <p>Nama : {{ $checkoutData->schedule->user->name }}</p>
-                        <p>Alamat : {{ $checkoutData->schedule->user->profile->address }}</p>
-                        <p>Nomor HP : {{ $checkoutData->schedule->user->profile->phone_number }}</p>
+                        <p>Nama : {{ $checkoutData->user->name }}</p>
+                        <p>Alamat : {{ $checkoutData->user->profile->address }}</p>
+                        <p>Nomor HP : {{ $checkoutData->user->profile->phone_number }}</p>
                     </div>
                 </div>
                 <div class="row">

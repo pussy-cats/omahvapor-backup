@@ -29,14 +29,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4>Jumlah Jadwal Kedepan</h4>
-                                <h5>{{ $scheduleAfter }} Jadwal</h5>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm">
@@ -45,7 +37,7 @@
                             <div class="card-body">
                                 {!! $userChart->render() !!}
                             </div>
-                        </div>
+                            </div>
                     </div>
                     <div class="col-sm">
                         <div class="card">

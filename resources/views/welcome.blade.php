@@ -4,8 +4,26 @@
 
 @section('content')
 @include('layouts.flash')
-<div class="jumbotron jumbotron-fluid"
-    style="background-image: url('{{ asset('images/jumbotron.jpg') }}'); background-size: cover; height: 600px; background-position: center">
+<div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
+  <div class="carousel-inner" style="height: 500px">
+    <div class="carousel-item active">
+      <img src="{{ asset('images/1.jpg') }}" class="d-block w-100" alt="..." style="height:500px">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" alt="..." style="height:500px">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('images/3.jpg') }}" class="d-block w-100" alt="..." style="height:500px">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
 <h4 class="display-4 text-center text-bold">Produk Kami</h4>

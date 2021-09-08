@@ -13,8 +13,8 @@
     <title>@yield('title')</title>
 </head>
 
-<body style="background-color: #eceff1" class="mb-5">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="background-color: #b0bec5" class="mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">{{ env('APP_NAME') }}</a>
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

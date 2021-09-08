@@ -13,7 +13,7 @@ class CheckoutController extends Controller
 {
     public function addCheckout()
     {
-        $allCarts = Cart::where('checkout_id', '=', NULL)->where('user_id', '=', Auth::user()->id)->get();
+        $allCarts = Cart::where('checkout_id', '=', NULL)->where('user_id', '=', Auth::user()->id)->where('is_paid', '=', 0)->get();
         if($allCarts->count() === 0){
             return redirect()->back()->with('flash', [
                 'card' => 'warning',
@@ -43,7 +43,7 @@ class CheckoutController extends Controller
 
     public function createCheckout(Request $request)
     {
-        $allCarts = Cart::where('checkout_id', '=', NULL)->where('user_id', '=', Auth::user()->id)->get();
+        $allCarts = Cart::where('checkout_id', '=', NULL)->where('user_id', '=', Auth::user()->id)->where('is_paid', '=', '0')->get();
         $totalPrice = $allCarts->sum(function($item){
             return $item->product->price * $item->quantity;
         });
@@ -57,12 +57,13 @@ class CheckoutController extends Controller
         if($checkout->save()){
             foreach($allCarts as $cart){
                 $cart->checkout_id = $checkout->id;
+                $cart->is_paid = 1;
                 $cart->save();
-                return redirect()->route('home')->with('flash', [
-                    'card' => 'success',
-                    'message' => 'Checkout berhasil'
-                ]);
             }
+            return redirect()->route('home')->with('flash', [
+                'card' => 'success',
+                'message' => 'Checkout berhasil'
+            ]);
         }else{
             return redirect()->route('home')->with('flash', [
                 'card' => 'failed',

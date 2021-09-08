@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Cart;
 use App\Checkout;
-use App\Schedule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -13,7 +12,7 @@ class CheckoutController extends Controller
   public function index()
   {
     $data = [
-      'allCheckouts' => Checkout::with('schedule.carts', 'user.profile')->paginate(5)
+      'allCheckouts' => Checkout::with('carts', 'user.profile')->paginate(5)
     ];
     return view('checkout.index', $data);
   }
@@ -67,5 +66,13 @@ class CheckoutController extends Controller
         'message' => 'Checkout Jadwal gagal'
       ]);
     }
+  }
+
+  public function detailCheckout($id)
+  {
+    $data = [
+      'checkoutData' => Checkout::find($id)
+    ];
+    return view('checkout.detail', $data);
   }
 }

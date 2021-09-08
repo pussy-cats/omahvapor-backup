@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Edit Produk - OmahVapor')
+@section('title', 'Edit Produk - Insomnia Vapestore')
 
 @section('content_header')
 <h1 class="m-0 text-dark">Edit Produk - {{ $product->name }}</h1>

@@ -22,7 +22,7 @@
                         <th scope="col">Total Belanja</th>
                         <th scope="col">Biaya Ongkir</th>
                         <th scope="col">Total Harga</th>
-                        <th class="text-center" scope="col" colspan="2">Opsi</th>
+                        <th class="text-center" scope="col" colspan="3">Opsi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,13 @@
                         <td>Rp. {{ number_format($invoice->deliveryfee) }}</td>
                         <td>Rp. {{ number_format($invoice->total + $invoice->deliveryfee) }}</td>
                         <td class="text-center"><a href="" class="btn btn-info">Detail</a></td>
-                        <td class="text-center"><a href="" class="btn btn-success">Cetak Nota</a></td>
+                        @if($invoice->payment)
+                        <td><a href="" class="btn btn-primary disabled" disabled>Sudah Dibayar</a></td>
+                        <td class="text-center"><a href="{{ route('checkoutInvoice', ['id' => $invoice->id]) }}" class="btn btn-success">Cetak Nota</a></td>
+                        @else
+                        <td><a href="{{ route('addPayment', ['id' => $invoice->id]) }}" class="btn btn-primary">Bayar</a></td>
+                        <td class="text-center"><a href="" class="btn btn-success disabled" disabled>Cetak Nota</a></td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

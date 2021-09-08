@@ -36,7 +36,7 @@
                         <td>{{ "Rp." . number_format($cart->product->price * $cart->quantity) }}</td>
                         <td class="text-center"><a href="{{ route('cartEdit', ['id' => $cart->id]) }}"
                                 class="btn btn-primary">Edit</a></td>
-                        <td class="text-center"><a href="{{ route('cartDelete', ['id' => $cart->id]) }}"
+                        <td class="text-center"><a href="{{ route('cartUserDelete', ['id' => $cart->id]) }}"
                                 class="btn btn-danger">Hapus</a></td>
                     </tr>
                     @endforeach

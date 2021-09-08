@@ -26,11 +26,20 @@ Route::prefix('rajaongkir')->group(function(){
   Route::get('/service/{cityId}/{courierId}', 'RajaOngkirController@getService')->name('service');
 });
 
+Route::middleware('auth')->group(function(){
+  Route::prefix('payment')->group(function(){
+    Route::get('/add/{id}', 'PaymentController@addPayment')->name('addPayment');
+    Route::post('/create/{id}', 'PaymentController@createPayment')->name('createPayment');
+  });
+  Route::get('/invoice/{id}', 'Admin\InvoiceController@index')->name('checkoutInvoice');
+});
+
 Route::middleware('auth')->namespace('User')->group(function(){
   Route::group(['middleware' => ['role:user']], function(){
     Route::prefix('cart')->group(function(){
       Route::get('/', 'CartController@index')->name('cartUserIndex');
       Route::get('/create/{id}', 'CartController@createCart')->name('cartUserCreate');
+      Route::Get('/delete/{id}', 'CartController@deleteCart')->name('cartUserDelete');
     });
 
     Route::prefix('checkout')->group(function(){
@@ -103,7 +112,7 @@ Route::middleware('auth')->namespace('Admin')->prefix('dashboard')->group(functi
 
     Route::prefix('checkout')->group(function() {
       Route::get('/', 'CheckoutController@index')->name('checkoutIndex');
-      Route::get('/invoice/{id}', 'InvoiceController@index')->name('checkoutInvoice');
+      Route::get('/detail/{id}', 'CheckoutController@detailCheckout')->name('checkoutDetail');
     });
   });
 });

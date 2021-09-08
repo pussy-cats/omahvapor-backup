@@ -13,12 +13,12 @@ class InvoiceController extends Controller
     $data = [
       'checkoutData' => Checkout::with(['carts' => function($q){
         return $q->where('is_paid', '=', '1');
-      }, 'schedule.user.profile'])
+      }, 'user.profile'])
         ->find($id)
     ];
 
-    return view('invoice.index', $data);
-    // $pdf = PDF::loadView('invoice.index', $data);
-    // return $pdf->stream();
+    // return view('invoice.pdf', $data);
+    $pdf = PDF::loadView('invoice.pdf', $data);
+    return $pdf->stream();
   }
 }
