@@ -90,6 +90,17 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Nomor Telepon</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="validatedInputGroupPrepend">+62</span>
+                                </div>
+                            <input name="phone_number" type="text" class="form-control" aria-describedby="validatedInputGroupPrepend" required>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Alamat Lengkap</label>

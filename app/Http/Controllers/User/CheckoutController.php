@@ -53,6 +53,7 @@ class CheckoutController extends Controller
         $checkout->courier = $request->courier;
         $checkout->deliveryfee = $request->deliveryfee;
         $checkout->address = $request->address;
+        $checkout->phone_number = '62' . $request->phone_number;
         $checkout->user_id = Auth::user()->id;
         if($checkout->save()){
             foreach($allCarts as $cart){

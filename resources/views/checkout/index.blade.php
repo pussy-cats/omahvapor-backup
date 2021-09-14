@@ -18,7 +18,7 @@
                             <th scope="col">Nama Pelanggan</th>
                             <th scope="col">Tanggal Pembelian</th>
                             <th scope="col">Total Bayar</th>
-                            <th scope="col" colspan="2" class="text-center">Opsi</th>
+                            <th scope="col" colspan="3" class="text-center">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,6 +28,7 @@
                             <td>{{ $checkout->user->name }}</td>
                             <td>{{ \Carbon\Carbon::parse($checkout->created_at)->isoFormat('D MMMM YYYY') }}
                             <td>{{ "Rp. " . number_format($checkout->total) }}</td>
+                            <td><a href="{{ route('checkoutConfirmation', ['id' => $checkout->id]) }}" target="_blank" class="btn btn-success">Kirim Konfirmasi</a></td>
                             @if($checkout->payment)
                             <td><a href="{{ route('checkoutDetail', ['id' => $checkout->id]) }}" class="btn btn-info">Lihat Bukti Pembayaran</a></td>
                             <td class="text-center"><a href="{{ route('checkoutInvoice', ['id' => $checkout->id]) }}"

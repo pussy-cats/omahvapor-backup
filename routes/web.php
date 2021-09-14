@@ -17,6 +17,7 @@ Auth::routes();
 
 Route::get('/', 'WelcomeController@index')->name('home');
 Route::get('/product', 'ProductController@index')->name('guestProductIndex');
+Route::get('/product/detail/{id}', 'ProductController@detailProduct')->name('guestProductDetail');
 Route::get('/dashboard/testimonial/', 'TestimonialController@index')->name('testimonialIndex');
 Route::get('/dashboard/testimonial/delete/{id}', 'TestimonialController@deleteTestimonial')->name('testimonialDelete');
 Route::post('/testimonial/create', 'TestimonialController@createTestimonial')->name('testimonialUserCreate');
@@ -105,6 +106,7 @@ Route::middleware('auth')->namespace('Admin')->prefix('dashboard')->group(functi
   
         Route::prefix('checkout')->group(function() {
           Route::get('/{id}', 'CheckoutController@cartCheckout')->name('checkoutCart');
+          Route::get('/confirm/{id}', 'CheckoutController@confirmationCheckout')->name('checkoutConfirmation');
           Route::post('/create/{id}', 'CheckoutController@createCheckout')->name('checkoutCreate');
         });
       });

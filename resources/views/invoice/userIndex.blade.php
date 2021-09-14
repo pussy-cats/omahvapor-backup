@@ -35,7 +35,6 @@
                         <td>Rp. {{ number_format($invoice->total) }}</td>
                         <td>Rp. {{ number_format($invoice->deliveryfee) }}</td>
                         <td>Rp. {{ number_format($invoice->total + $invoice->deliveryfee) }}</td>
-                        <td class="text-center"><a href="" class="btn btn-info">Detail</a></td>
                         @if($invoice->payment)
                         <td><a href="" class="btn btn-primary disabled" disabled>Sudah Dibayar</a></td>
                         <td class="text-center"><a href="{{ route('checkoutInvoice', ['id' => $invoice->id]) }}" class="btn btn-success">Cetak Nota</a></td>

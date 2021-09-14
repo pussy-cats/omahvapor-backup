@@ -20,6 +20,7 @@ class CreateCheckoutsTable extends Migration
             $table->integer('change')->nullable();
             $table->string('courier')->nullable();
             $table->text('address')->nullable();
+            $table->text('phone_number');
             $table->integer('deliveryfee')->nullable();
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();

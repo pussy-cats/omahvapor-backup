@@ -38,7 +38,7 @@
                     <p class="card-text">{{ $product->description }}</p>
                     <div class="row">
                         <div class="col-sm-4">
-                            <a href="" class="btn btn-success">Detail</a>
+                            <a href="{{ route('guestProductDetail', ['id' => $product->id]) }}" class="btn btn-success">Detail</a>
                         </div>
                         <div class="col-sm-8">
                             <a href="{{ route('cartUserCreate', ['id' => $product->id]) }}" class="btn btn-primary">+
