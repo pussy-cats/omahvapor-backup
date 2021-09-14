@@ -31,7 +31,7 @@
                         <a class="nav-link" href="{{ route('guestProductIndex') }}">Produk Kami</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tentang Kami</a>
+                        <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
                     </li>
                 </ul>
                 @auth

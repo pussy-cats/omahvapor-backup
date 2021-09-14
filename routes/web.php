@@ -20,6 +20,9 @@ Route::get('/product', 'ProductController@index')->name('guestProductIndex');
 Route::get('/product/detail/{id}', 'ProductController@detailProduct')->name('guestProductDetail');
 Route::get('/dashboard/testimonial/', 'TestimonialController@index')->name('testimonialIndex');
 Route::get('/dashboard/testimonial/delete/{id}', 'TestimonialController@deleteTestimonial')->name('testimonialDelete');
+Route::get('/about', function(){
+  return view('about');
+})->name('about');
 Route::post('/testimonial/create', 'TestimonialController@createTestimonial')->name('testimonialUserCreate');
 
 Route::prefix('rajaongkir')->group(function(){
