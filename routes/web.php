@@ -43,7 +43,9 @@ Route::middleware('auth')->namespace('User')->group(function(){
     Route::prefix('cart')->group(function(){
       Route::get('/', 'CartController@index')->name('cartUserIndex');
       Route::get('/create/{id}', 'CartController@createCart')->name('cartUserCreate');
-      Route::Get('/delete/{id}', 'CartController@deleteCart')->name('cartUserDelete');
+      Route::get('/delete/{id}', 'CartController@deleteCart')->name('cartUserDelete');
+      Route::get('/addquantity/{id}', 'CartController@addQuantity')->name('cartQuantityAdd');
+      Route::get('/minusquantity/{id}', 'CartController@minusQuantity')->name('cartQuantityMinus');
     });
 
     Route::prefix('checkout')->group(function(){

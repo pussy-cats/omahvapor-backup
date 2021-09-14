@@ -47,4 +47,38 @@ class CartController extends Controller
             ]);
         }
     }
+
+    public function addQuantity($id)
+    {
+        $cart = Cart::find($id);
+        $cart->quantity = $cart->quantity + 1;
+        if($cart->save()){
+            return redirect()->route('cartUserIndex')->with('flash', [
+                'card' => 'success',
+                'message' => 'Keranjang berhasil ditambah'
+            ]);
+        }else{
+            return redirect()->route('cartUserIndex')->with('flash', [
+                'card' => 'failed',
+                'message' => 'Keranjang gagal ditambah'
+            ]);
+        }
+    }
+
+    public function minusQuantity($id)
+    {
+        $cart = Cart::find($id);
+        $cart->quantity = $cart->quantity - 1;
+        if($cart->save()){
+            return redirect()->route('cartUserIndex')->with('flash', [
+                'card' => 'success',
+                'message' => 'Keranjang berhasil dikurangi'
+            ]);
+        }else{
+            return redirect()->route('cartUserIndex')->with('flash', [
+                'card' => 'failed',
+                'message' => 'Keranjang gagal dikurangi'
+            ]);
+        }
+    }
 }
